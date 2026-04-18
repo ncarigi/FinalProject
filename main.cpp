@@ -4,12 +4,65 @@
 
 int main() {
 
-    hospital hospital_1;
+    hospital hospital_central;
 
+    while (true) {
+        cout << "Please select an option: [1-7]" << endl;
+        cout <<"1. Find oldest patient\n2. Count critical patients\n3. Show patient by ID\n4. Show doctor by ID\n5. Show assigned doctor\n6. Show assigned patients\n7. Exit\n";
+        int menuSelector;
+        if (1 == 1) {
+            cin >> menuSelector;
+        }
+        switch (menuSelector) {
+            case 1: { //Find oldest patient
+                hospital_central.FindOldestPatient();
+            }
 
+            case 2: { //Count critical patients
+                hospital_central.CountCriticalPatients();
+            }
 
+            case 3: {
+                cout<<"Patient Search by ID"<<endl;
+                cout<<"ID to search: ";
+                long int IDToSearch;
+                cin >> IDToSearch;
+                hospital_central.Show_Patient_by_ID(IDToSearch);
+            }
 
+            case 4: {
+                cout<<"Doctor Search by ID"<<endl;
+                cout<<"ID to search: ";
+                long int IDToSearch;
+                cin >> IDToSearch;
+                hospital_central.Show_Doctor_by_ID(IDToSearch);
+            }
 
-    std::cout << "Hello, World!" << std::endl;
+            case 5: {
+                cout<<"Show assigned doctor"<<endl;
+                cout<<"Patent ID to search: ";
+                long int IDToSearch;
+                cin >> IDToSearch;
+                hospital_central.Show_Assigned_Doctor(IDToSearch);
+
+            }
+
+            case 6: {
+                cout<<"Show assigned patients"<<endl;
+                cout<<"Doctor ID to search: ";
+                long int IDToSearch;
+                cin >> IDToSearch;
+                hospital_central.Show_Assigned_Patients(IDToSearch);
+            }
+
+            case 7: { //Exit
+                return false;
+            }
+            default: {
+
+            }
+
+        }
+    }
     return 0;
 }

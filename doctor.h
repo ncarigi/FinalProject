@@ -1,6 +1,3 @@
-//
-// Created by Nicolas Carigi on 2026-04-18.
-//
 
 #ifndef FINALPROJECT_DOCTOR_H
 #define FINALPROJECT_DOCTOR_H

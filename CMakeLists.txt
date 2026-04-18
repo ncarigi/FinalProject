@@ -13,3 +13,4 @@ add_executable(FinalProject main.cpp
         doctor.h)
 
 file(COPY patients.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY doctors.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

@@ -1,0 +1,8 @@
+6
+docFirstName docLastName docID specialty yearsExp baseSalary performanceBonus
+Gregory House 20000001 Diagnostics 25 250000 0.15
+James Wilson 20000002 Oncology 20 200000 0.10
+Lisa Cuddy 20000003 Endocrinology 22 300000 0.20
+Meredith Grey 20000004 General_Surgery 15 180000 0.12
+Derek Shepherd 20000005 Neurosurgery 20 280000 0.18
+Cristina Yang 20000006 Cardiothoracic 14 190000 0.15

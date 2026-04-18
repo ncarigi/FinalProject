@@ -1,3 +1,8 @@
-5
+6
 firstName lastName patientID assignedDoctorID DOB bloodType diagnosis admitDate dischargeDate
-Meridth Grey 001 003 19800327 A+ "Almost dying" 20040301 20240301
+Serena van_der_Woodsen 10000001 20000001 19910714 A+ moderate_fatigue 20240401 20240405
+Blair Waldorf 10000002 20000003 19901115 B- critical_condition 20240410 N/A
+Chuck Bass 10000003 20000005 19890519 AB+ moderate_concussion 20240415 20240418
+Nate Archibald 10000004 20000004 19910302 O+ stable_appendectomy 20240417 N/A
+Dan Humphrey 10000005 -1 19900920 O- routine_checkup 20240418 20240418
+Lily van_der_Woodsen 10000006 20000002 19680806 A- critical_fever 20240301 N/A
