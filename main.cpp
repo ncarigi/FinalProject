@@ -1,12 +1,14 @@
 #include <iostream>
-#include "patient.h"
+#include "hospital.h"
+
 
 int main() {
 
-    patient test;
+    hospital hospital_1;
 
-    test.importPatients();
-    test.Patient_Status();
+
+
+
 
     std::cout << "Hello, World!" << std::endl;
     return 0;

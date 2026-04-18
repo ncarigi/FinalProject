@@ -8,12 +8,18 @@
 #include "doctor.h"
 #include "patient.h"
 
-
 class hospital {
 
     public:
     hospital();
     void importPatients();
+    void FindOldestPatient();
+    int CountCriticalPatients();
+    void DoctorsBySpecialty(string specialty);
+    void Show_Patient_by_ID(long int ID);
+    void Show_Doctor_by_ID(long int ID);
+    void Show_Assigned_Doctor(long int PatientID);
+    void Show_Assigned_Patients(long int DoctorID);
 
     private:
     vector<patient> patients;
