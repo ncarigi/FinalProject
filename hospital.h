@@ -4,6 +4,9 @@
 
 #ifndef FINALPROJECT_HOSPITAL_H
 #define FINALPROJECT_HOSPITAL_H
+#include <vector>
+#include "doctor.h"
+#include "patient.h"
 
 
 class hospital {
@@ -13,6 +16,8 @@ class hospital {
     void importPatients();
 
     private:
+    vector<patient> patients;
+    vector<doctor> doctors;
 };
 
 

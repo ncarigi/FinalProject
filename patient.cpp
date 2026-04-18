@@ -22,7 +22,7 @@ string patient::Patient_Status() {
 }
 
 void patient::Print_Patient_Info() {
-    cout<<"Patient Name: "<<firstName << lastName << endl;
+    cout<<"Patient Name: "<<firstName <<" "<< lastName << endl;
     cout<<"ID: "<<patientID<< endl;
     cout<<"Assigned doctor: {DOCTOR NAME} ["<<assignedDoctorID<<"]"<< endl;
     cout<<"Date of birth: "<<DOB<< endl;
