@@ -1,11 +1,12 @@
 #include <iostream>
-#include "patients.h"
+#include "patient.h"
 
 int main() {
 
-    patients test;
+    patient test;
 
     test.importPatients();
+    test.Patient_Status();
 
     std::cout << "Hello, World!" << std::endl;
     return 0;

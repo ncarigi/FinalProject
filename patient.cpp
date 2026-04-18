@@ -2,30 +2,14 @@
 // Created by Nicolas Carigi on 2026-04-17.
 //
 
-#include "patients.h"
+#include "patient.h"
 #include <fstream>
 #include <iostream>
 #include <ostream>
 
 using namespace std;
 
-string patients::importPatients() {
-    std::string line;
-    ifstream patientsFile("patients.txt");
-
-    if (patientsFile.is_open()) {
-        while (std::getline(patientsFile, line)) {
-            std::cout << line << std::endl;
-            return line;
-        }
-        patientsFile.close();
-    } else {
-        std::cout << "Unable to open patients.txt" << std::endl;
-        return "0";
-    }
-}
-
-string patients::Patient_Status() {
+string patient::Patient_Status() {
     if (diagnosis.find("critical") != std::string::npos) {
         return "Critical";
     }
@@ -37,7 +21,7 @@ string patients::Patient_Status() {
     }
 }
 
-void patients::Print_Patient_Info() {
+void patient::Print_Patient_Info() {
     cout<<"Patient Name: "<<firstName << lastName << endl;
     cout<<"ID: "<<patientID<< endl;
     cout<<"Assigned doctor: {DOCTOR NAME} ["<<assignedDoctorID<<"]"<< endl;
@@ -48,7 +32,7 @@ void patients::Print_Patient_Info() {
     cout<<"Discharge date: "<<dischargeDate<< endl;
 }
 
-patients::patients(std::string buildFirstName,std::string buildLastName,long int buildPatientID,long int buildAssignedDoctorID,
+patient::patient(std::string buildFirstName,std::string buildLastName,long int buildPatientID,long int buildAssignedDoctorID,
     std::string buildDOB,std::string buildBloodType,std::string buildDiagnosis,std::string buildAdmitDate,
     std::string buildDischargeDate) {
     firstName = buildFirstName;
@@ -62,7 +46,7 @@ patients::patients(std::string buildFirstName,std::string buildLastName,long int
     dischargeDate = buildDischargeDate;
 }
 
-patients::patients() {
+patient::patient() {
     firstName = "";
     lastName = "";
     patientID = 0;
@@ -75,60 +59,60 @@ patients::patients() {
 }
 
 
-string patients::getFirstName() {
+string patient::getFirstName() {
     return firstName;
 }
-string patients::getLastName() {
+string patient::getLastName() {
     return lastName;
 }
-long int patients::getPatientID() {
+long int patient::getPatientID() {
     return patientID;
 }
-long int patients::getAssignedDoctorID() {
+long int patient::getAssignedDoctorID() {
     return assignedDoctorID;
 }
-string patients::getDOB() {
+string patient::getDOB() {
     return DOB;
 }
-string patients::getBloodType() {
+string patient::getBloodType() {
     return bloodType;
 }
-string patients::getDiagnosis() {
+string patient::getDiagnosis() {
     return diagnosis;
 }
-string patients::getAdmitDate() {
+string patient::getAdmitDate() {
     return admitDate;
 }
-string patients::getDischargeDate() {
+string patient::getDischargeDate() {
     return dischargeDate;
 }
 
-void patients::setFirstName(string firstName) {
+void patient::setFirstName(string firstName) {
     this->firstName = firstName;
 }
-void patients::setLastName(string lastName) {
+void patient::setLastName(string lastName) {
     this->lastName = lastName;
 }
-void patients::setPatientID(long int patientID) {
+void patient::setPatientID(long int patientID) {
     this->patientID = patientID;
 }
-void patients::setAssignedDoctorID(long int assignedDoctorID) {
+void patient::setAssignedDoctorID(long int assignedDoctorID) {
     this->assignedDoctorID = assignedDoctorID;
 }
-void patients::setDOB(string DOB) {
+void patient::setDOB(string DOB) {
     this->DOB = DOB;
 }
-void patients::setBloodType(string bloodType) {
+void patient::setBloodType(string bloodType) {
     this->bloodType = bloodType;
 }
-void patients::setDiagnosis(string diagnosis) {
+void patient::setDiagnosis(string diagnosis) {
     this->diagnosis = diagnosis;
 }
 
-void patients::setAdmitDate(string admitDate) {
+void patient::setAdmitDate(string admitDate) {
     this->admitDate = admitDate;
 }
 
-void patients::setDischargeDate(string dischargeDate) {
+void patient::setDischargeDate(string dischargeDate) {
     this->dischargeDate = dischargeDate;
 }

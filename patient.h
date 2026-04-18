@@ -5,19 +5,19 @@
 using namespace std;
 
 
-class patients {
+class patient {
 
     //Constructor
     public:
-    patients(string firstName,string lastName,long int patientID,long int assignedDoctorID,
+    patient(string firstName,string lastName,long int patientID,long int assignedDoctorID,
     string DOB,string bloodType,string diagnosis,string admitDate,
     string dischargeDate);
 
-    patients();
+    patient();
 
 
     //Class functions
-    string importPatients();
+    void importPatients();
     string Patient_Status();
     void Print_Patient_Info();
     
@@ -59,4 +59,4 @@ class patients {
 };
 
 
-#endif //FINALPROJECT_PATIENTS_H
+#endif //FINALPROJECT_patient_H

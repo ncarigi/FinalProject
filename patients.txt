@@ -1,2 +1,3 @@
+5
 firstName lastName patientID assignedDoctorID DOB bloodType diagnosis admitDate dischargeDate
 Meridth Grey 001 003 19800327 A+ "Almost dying" 20040301 20240301

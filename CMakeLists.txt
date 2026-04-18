@@ -4,6 +4,12 @@ project(FinalProject)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(FinalProject main.cpp
-        patients.cpp
-        patients.h
-        patients.h)
+        patient.cpp
+        patient.h
+        patient.h
+        hospital.cpp
+        hospital.h
+        doctor.cpp
+        doctor.h)
+
+file(COPY patients.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
