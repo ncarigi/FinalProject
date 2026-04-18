@@ -9,7 +9,7 @@
 using namespace std;
 
 
-void patient::importPatients() {
+void hospital::importPatients() {
     std::string line;
     /*
     ifstream patientsFile("patients.txt");

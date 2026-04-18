@@ -10,7 +10,7 @@ double doctor::CalcSalary() {
     return baseSalary+baseSalary*performanceBonus;
 }
 
-void doctor::Print_Patient_Info() {
+void doctor::Print_Doctor_Info() {
     cout<<"Patient Name: "<<docFirstName <<" "<< docLastName << endl;
     cout<<"ID: "<<docID<< endl;
     cout<<"Specialty: ["<<specialty<<"]"<< endl;

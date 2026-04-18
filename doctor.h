@@ -11,7 +11,7 @@ class doctor {
     public:
     doctor();
     double CalcSalary();
-    void Print_Patient_Info();
+    void Print_Doctor_Info();
 
     // Getters
     std::string getDocFirstName();

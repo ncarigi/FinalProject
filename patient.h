@@ -17,7 +17,6 @@ class patient {
 
 
     //Class functions
-    void importPatients();
     string Patient_Status();
     void Print_Patient_Info();
     
