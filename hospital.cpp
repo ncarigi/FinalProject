@@ -24,6 +24,9 @@ void hospital::FindOldestPatient() {
     cout << "Oldest patient is: " << endl;
     Show_Patient_by_ID(oldestPatientID);
     }
+    else {
+    cout << "No patients found" << endl;
+    }
 }
 
 int hospital::CountCriticalPatients(){}
