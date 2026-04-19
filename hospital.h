@@ -12,7 +12,7 @@ class hospital {
 
     public:
     hospital();
-    void importPatients();
+
     void FindOldestPatient();
     int CountCriticalPatients();
     void DoctorsBySpecialty(string specialty);

@@ -16,10 +16,12 @@ int main() {
         switch (menuSelector) {
             case 1: { //Find oldest patient
                 hospital_central.FindOldestPatient();
+                break;
             }
 
             case 2: { //Count critical patients
                 hospital_central.CountCriticalPatients();
+                break;
             }
 
             case 3: {
@@ -28,6 +30,7 @@ int main() {
                 long int IDToSearch;
                 cin >> IDToSearch;
                 hospital_central.Show_Patient_by_ID(IDToSearch);
+                break;
             }
 
             case 4: {
@@ -36,6 +39,7 @@ int main() {
                 long int IDToSearch;
                 cin >> IDToSearch;
                 hospital_central.Show_Doctor_by_ID(IDToSearch);
+                break;
             }
 
             case 5: {
@@ -44,6 +48,7 @@ int main() {
                 long int IDToSearch;
                 cin >> IDToSearch;
                 hospital_central.Show_Assigned_Doctor(IDToSearch);
+                break;
 
             }
 
@@ -53,9 +58,12 @@ int main() {
                 long int IDToSearch;
                 cin >> IDToSearch;
                 hospital_central.Show_Assigned_Patients(IDToSearch);
+                break;
             }
 
             case 7: { //Exit
+                cout<<"Goodbye"<<endl;
+                cout<<"Shutting down"<<endl;
                 return false;
             }
             default: {

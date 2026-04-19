@@ -19,6 +19,7 @@ class patient {
     //Class functions
     string Patient_Status();
     void Print_Patient_Info();
+    double calculateAge();
     
     //getters
     string getFirstName();

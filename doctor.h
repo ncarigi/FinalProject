@@ -7,6 +7,14 @@ using namespace std;
 class doctor {
     public:
     doctor();
+    doctor(string docFirstName,
+    string docLastName,
+    long int docID,
+    string specialty,
+    int yearsExp,
+    double baseSalary,
+    double performanceBonus);
+
     double CalcSalary();
     void Print_Doctor_Info();
 

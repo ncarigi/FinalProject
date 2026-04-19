@@ -32,6 +32,16 @@ void patient::Print_Patient_Info() {
     cout<<"Discharge date: "<<dischargeDate<< endl;
 }
 
+double patient::calculateAge() {
+    int currentDateYYYYMMDD=20260418;
+
+    // Convert the DOB string to an integer
+    double dobInt = std::stoi(DOB);
+
+    // Calculate and return the age
+    return (currentDateYYYYMMDD - dobInt) / 10000;
+}
+
 patient::patient(std::string buildFirstName,std::string buildLastName,long int buildPatientID,long int buildAssignedDoctorID,
     std::string buildDOB,std::string buildBloodType,std::string buildDiagnosis,std::string buildAdmitDate,
     std::string buildDischargeDate) {

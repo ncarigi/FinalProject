@@ -19,6 +19,15 @@ void doctor::Print_Doctor_Info() {
     cout<<"Performance bonys: "<<performanceBonus <<"["<<CalcSalary()<<"]"<< endl;
 }
 
+doctor::doctor(string buildDocFirstName, string buildDocLastName, long int buildDocID, string buildSpecialty, int buildYearsExp, double buildBaseSalary, double buildPerformanceBonus) {
+    docFirstName=buildDocFirstName;
+    docLastName=buildDocLastName;
+    docID=buildDocID;
+    specialty=buildSpecialty;
+    yearsExp=buildYearsExp;
+    baseSalary=buildBaseSalary;
+    performanceBonus=buildPerformanceBonus;
+}
 
 // --- Getters ---
 std::string doctor::getDocFirstName() {
