@@ -6,6 +6,8 @@
 #include <fstream>
 #include <iostream>
 #include <ostream>
+#include "doctor.h"
+
 
 using namespace std;
 
@@ -24,7 +26,12 @@ string patient::Patient_Status() {
 void patient::Print_Patient_Info() {
     cout<<"Patient Name: "<<firstName <<" "<< lastName << endl;
     cout<<"ID: "<<patientID<< endl;
-    cout<<"Assigned doctor: {DOCTOR NAME} ["<<assignedDoctorID<<"]"<< endl;
+    if (assignedDoctorID <= 0) {
+        cout<<"Assigned doctor: No doctor assigned"<< endl;
+    }
+    else {
+        cout<<"Assigned doctor: ["<<assignedDoctorID<<"]"<< endl;
+    }
     cout<<"Date of birth: "<<DOB<< endl;
     cout<<"Blood type: "<<bloodType<< endl;
     cout<<"Diagnosis: "<<diagnosis<< endl;

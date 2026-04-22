@@ -11,12 +11,12 @@ double doctor::CalcSalary() {
 }
 
 void doctor::Print_Doctor_Info() {
-    cout<<"Patient Name: "<<docFirstName <<" "<< docLastName << endl;
+    cout<<"Doctor Name: "<<docFirstName <<" "<< docLastName << endl;
     cout<<"ID: "<<docID<< endl;
-    cout<<"Specialty: ["<<specialty<<"]"<< endl;
+    cout<<"Specialty: "<<specialty<< endl;
     cout<<"Years of experience: "<<yearsExp<< endl;
     cout<<"Base Salary:  "<<baseSalary<< endl;
-    cout<<"Performance bonys: "<<performanceBonus <<"["<<CalcSalary()<<"]"<< endl;
+    cout<<"Performance bonus: "<<performanceBonus <<"% ["<<CalcSalary()<<"$]"<<endl;
 }
 
 doctor::doctor(string buildDocFirstName, string buildDocLastName, long int buildDocID, string buildSpecialty, int buildYearsExp, double buildBaseSalary, double buildPerformanceBonus) {
@@ -27,6 +27,16 @@ doctor::doctor(string buildDocFirstName, string buildDocLastName, long int build
     yearsExp=buildYearsExp;
     baseSalary=buildBaseSalary;
     performanceBonus=buildPerformanceBonus;
+}
+
+doctor::doctor(){
+    docFirstName="";
+    docLastName="";
+    docID=0;
+    specialty="";
+    yearsExp=0;
+    baseSalary=0;
+    performanceBonus=0;
 }
 
 // --- Getters ---

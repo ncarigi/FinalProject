@@ -16,10 +16,13 @@ class hospital {
     void FindOldestPatient();
     int CountCriticalPatients();
     void DoctorsBySpecialty(string specialty);
-    patient Show_Patient_by_ID(long int ID);
-    doctor Show_Doctor_by_ID(long int ID);
+    void Show_Patient_by_ID(long int ID);
+    void Show_Doctor_by_ID(long int ID);
     void Show_Assigned_Doctor(long int PatientID);
     void Show_Assigned_Patients(long int DoctorID);
+
+    patient Get_Patient_Object_By_ID(long int ID);
+    doctor Get_Doctor_Object_By_ID(long int ID);
 
     private:
     vector<patient> patients;

@@ -7,7 +7,7 @@ int main() {
     hospital hospital_central;
 
     while (true) {
-        cout << "Please select an option: [1-7]" << endl;
+        cout << "\nPlease select an option: [1-7]" << endl;
         cout <<"1. Find oldest patient\n2. Count critical patients\n3. Show patient by ID\n4. Show doctor by ID\n5. Show assigned doctor\n6. Show assigned patients\n7. Exit\n";
         int menuSelector;
         cin >> menuSelector;
@@ -18,7 +18,7 @@ int main() {
             }
 
             case 2: { //Count critical patients
-                cout <<"There are currently " << hospital_central.CountCriticalPatients() << " critical patients\n\n";
+                cout <<"There are currently " << hospital_central.CountCriticalPatients() << " critical patients\n";
                 break;
             }
 
@@ -64,6 +64,12 @@ int main() {
                 cout<<"Shutting down"<<endl;
                 return false;
             }
+
+            case 8: { //Count critical patients
+                hospital_central.DoctorsBySpecialty("Diagnostics");
+                break;
+            }
+
             default: {
                 cout<<"Invalid option!"<<endl;
                 std::cin.clear();

@@ -21,7 +21,7 @@ void hospital::FindOldestPatient() {
             }
 
         }
-    cout << "Oldest patient is: " << endl;
+    cout << "Oldest patient is "<< oldestPatientAge <<" years old. See more below" << endl;
     Show_Patient_by_ID(oldestPatientID);
     }
     else {
@@ -40,48 +40,112 @@ int hospital::CountCriticalPatients() {
     }
     return NumCriticalPatients;
 }
-void hospital::DoctorsBySpecialty(string specialty){}
 
-
-patient hospital::Show_Patient_by_ID(long int ID) {
-
-    // Loop through the vector of patients
+patient hospital::Get_Patient_Object_By_ID(long int ID) {
     for (int i = 0; i < patients.size(); i++) {
-        // Check if the current doctor's ID matches the requested ID
         if (patients[i].getPatientID() == ID) {
-            cout << "--- Patient Found ---" << endl;
-            patients[i].Print_Patient_Info(); // Print their details
-            cout << endl;
-
-            return patient();
+            return patients[i];
         }
     }
-        cout << "Error: No doctor found with ID " << ID << "." << endl;
-    return {};
+    return patient();
 }
 
-doctor hospital::Show_Doctor_by_ID(long int ID) {
-    // Loop through the vector of doctors
+doctor hospital::Get_Doctor_Object_By_ID(long int ID) {
     for (int i = 0; i < doctors.size(); i++) {
-        // Check if the current doctor's ID matches the requested ID
         if (doctors[i].getDocID() == ID) {
-            cout << "\n--- Doctor Found ---" << endl;
-            doctors[i].Print_Doctor_Info(); // Print their details
-
             return doctors[i];
         }
     }
-        cout << "Error: No doctor found with ID " << ID << "." << endl;
-        return doctor();
+    return doctor();
+}
+
+
+void hospital::DoctorsBySpecialty(string specialty) {
+
+    cout << "Here are the doctors specializing in "<<specialty<<":"<< endl;
+    for (int i = 0; i < doctors.size(); i++) {
+        if (doctors[i].getSpecialty()==specialty) {
+            cout <<"["<<i+1<<"] " << doctors[i].getDocFirstName()<<" "<<doctors[i].getDocLastName()<<" ID: "<<doctors[i].getDocID()<<"\n\n";
+
+        }
+    }
+}
+
+
+void hospital::Show_Patient_by_ID(long int ID) {
+
+        // Check if the current patient ID matches the requested ID
+        if (Get_Patient_Object_By_ID(ID).getPatientID()>0) {
+            cout << "--- Patient Found ---" << endl;
+            Get_Patient_Object_By_ID(ID).Print_Patient_Info(); // Print their details
+        }
+        else {
+            cout << "Error: No patient found with ID " << ID << "." << endl;
+        }
+
+}
+void hospital::Show_Doctor_by_ID(long int ID) {
+    // Check if the current patient ID matches the requested ID
+    if (Get_Doctor_Object_By_ID(ID).getDocID()>0) {
+        cout << "--- Doctor Found ---" << endl;
+        Get_Doctor_Object_By_ID(ID).Print_Doctor_Info(); // Print their details
+    }
+    else {
+        cout << "Error: No Doctor found with ID " << ID << "." << endl;
+    }
 }
 
 void hospital::Show_Assigned_Doctor(long int PatientID) {
 
+    if (Get_Patient_Object_By_ID(PatientID).getPatientID()>0) {
+        patient patient = Get_Patient_Object_By_ID(PatientID);
+        long int assignedDoctorID = patient.getAssignedDoctorID();
+
+        if (assignedDoctorID>0) {
+            doctor assignedDoctor = Get_Doctor_Object_By_ID(assignedDoctorID);
+
+            cout << "The doctor assigned to " << patient.getFirstName()<<" "<<patient.getLastName()<<" is:\n";
+            assignedDoctor.Print_Doctor_Info();
+        }
+        else {
+            cout << "There is currently no doctor assigned to this patient" << endl;
+        }
+
+    }
+    else {
+        cout << "Error: No Patient found with ID " << PatientID << "." << endl;
+    }
 
 }
 void hospital::Show_Assigned_Patients(long int DoctorID) {
+    if (Get_Doctor_Object_By_ID(DoctorID).getDocID()>0) {
+        doctor doctor = Get_Doctor_Object_By_ID(DoctorID);
+        vector<patient> assignedPatients;
+
+        for (int i = 0; i < patients.size(); i++) {
+            if (patients[i].getAssignedDoctorID()==DoctorID) {
+                assignedPatients.push_back(patients[i]);
+            }
+        }
+
+        if (assignedPatients.size()>1||assignedPatients[0].getPatientID()!=0) {
+            cout << "The following patients are assigned to doctor " << doctor.getDocFirstName() << " " << doctor.getDocLastName()<<" ID: "<<doctor.getDocID()<<endl;
+            for (int i = 0; i < assignedPatients.size(); i++) {
+                cout <<"["<<i+1<<"]\n" ;
+                assignedPatients[i].Print_Patient_Info();
+            }
+        }
+        else {
+            cout << "There is currently no patients assigned to this doctor" << endl;
+        }
+
+    }
+    else {
+        cout << "Error: No Doctor found with ID " << DoctorID << "." << endl;
+    }
 
 }
+
 
 hospital::hospital() {
     ifstream patientsFile("patients.txt");
