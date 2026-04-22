@@ -8,11 +8,11 @@ int main() {
 
     while (true) {
         cout << "\nPlease select an option: [1-7]" << endl;
-        cout <<"1. Find oldest patient\n2. Count critical patients\n3. Show patient by ID\n4. Show doctor by ID\n5. Show assigned doctor\n6. Show assigned patients\n7. Exit\n";
+        cout <<"1. Find oldest patient\n2. Count critical patients\n3. Show patient by ID\n4. Show doctor by ID\n5. Show assigned doctor\n6. Show assigned patients\n7. Doctors by speciality\n8. Exit\n";
         int menuSelector;
         cin >> menuSelector;
         switch (menuSelector) {
-            case 1: { //Find oldest patient
+            case 1: { //Find the oldest patient
                 hospital_central.FindOldestPatient();
                 break;
             }
@@ -59,15 +59,15 @@ int main() {
                 break;
             }
 
-            case 7: { //Exit
-                cout<<"Goodbye"<<endl;
-                cout<<"Shutting down"<<endl;
-                return false;
-            }
-
-            case 8: { //Count critical patients
+            case 7: { //Count critical patients
                 hospital_central.DoctorsBySpecialty("Diagnostics");
                 break;
+            }
+
+            case 8: { //Exit
+                cout<<"Goodbye"<<endl;
+                cout<<"Shutting down"<<endl;
+                return 0;
             }
 
             default: {
@@ -79,5 +79,5 @@ int main() {
 
         }
     }
-    return 0;
+
 }
