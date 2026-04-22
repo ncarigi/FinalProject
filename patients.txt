@@ -1,4 +1,4 @@
-6
+12
 firstName lastName patientID assignedDoctorID DOB bloodType diagnosis admitDate dischargeDate
 Serena van_der_Woodsen 10000001 20000001 19910714 A+ moderate_fatigue 20240401 20240405
 Blair Waldorf 10000002 20000003 19901115 B- critical_condition 20240410 N/A

@@ -93,7 +93,7 @@ hospital::hospital() {
             patients.push_back(newPatient);
         }
         patientsFile.close();
-        cout << "Successfully loaded " << numPatients << " patients." << endl;
+        cout << "Successfully loaded " << patients.size() << " patients." << endl;
     } else {
         cout << "Unable to open patients.txt" << endl;
     }
@@ -103,7 +103,7 @@ hospital::hospital() {
 
     if (doctorsFile.is_open()) {
         int numDocs;
-        patientsFile >> numDocs;
+        doctorsFile >> numDocs;
 
         getline(doctorsFile, doctorInfoLine);
 
@@ -125,8 +125,16 @@ hospital::hospital() {
             doctors.push_back(newDoctor);
         }
         doctorsFile.close();
-        cout << "Successfully loaded " << numDocs << " patients." << endl;
+        cout << "Successfully loaded " << doctors.size() << " doctors." << endl;
     } else {
         cout << "Unable to open doctors.txt" << endl;
     }
+
+    for (int i = 0; i < patients.size(); i++) {
+        cout << patients[i].getFirstName()<< endl;
+    }
+    for (int i = 0; i < doctors.size(); i++) {
+        cout << doctors[i].getDocFirstName()<< endl;
+    }
+
 }
