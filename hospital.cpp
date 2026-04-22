@@ -6,12 +6,12 @@
 #include <iostream>
 #include <sstream>
 
-#include "patient.h"
+
 using namespace std;
 
 void hospital::FindOldestPatient() {
-    if (patients.empty()) {
-        long int oldestPatientID;
+    if (!patients.empty()) {
+        long int oldestPatientID=0;
         double oldestPatientAge=0;
 
         for (int i = 0; i < patients.size(); i++) {
@@ -29,50 +29,68 @@ void hospital::FindOldestPatient() {
     }
 }
 
-int hospital::CountCriticalPatients(){}
+int hospital::CountCriticalPatients() {
+    int NumCriticalPatients=0;
+    if (!patients.empty()) {
+        for (int i = 0; i < patients.size(); i++) {
+            if (patients[i].Patient_Status()=="Critical") {
+                NumCriticalPatients++;
+            }
+        }
+    }
+    return NumCriticalPatients;
+}
 void hospital::DoctorsBySpecialty(string specialty){}
-void hospital::Show_Patient_by_ID(long int ID) {
-    bool found = false;
+
+
+patient hospital::Show_Patient_by_ID(long int ID) {
 
     // Loop through the vector of patients
     for (int i = 0; i < patients.size(); i++) {
         // Check if the current doctor's ID matches the requested ID
         if (patients[i].getPatientID() == ID) {
-            cout << "\n--- Patient Found ---" << endl;
+            cout << "--- Patient Found ---" << endl;
             patients[i].Print_Patient_Info(); // Print their details
-            found = true;
-            break; // Stop searching since we found them
+            cout << endl;
+
+            return patient();
         }
     }
+        cout << "Error: No doctor found with ID " << ID << "." << endl;
+    return {};
 }
-void hospital::Show_Doctor_by_ID(long int ID) {
-    bool found = false;
 
+doctor hospital::Show_Doctor_by_ID(long int ID) {
     // Loop through the vector of doctors
     for (int i = 0; i < doctors.size(); i++) {
         // Check if the current doctor's ID matches the requested ID
         if (doctors[i].getDocID() == ID) {
             cout << "\n--- Doctor Found ---" << endl;
             doctors[i].Print_Doctor_Info(); // Print their details
-            found = true;
-            break; // Stop searching since we found them
+
+            return doctors[i];
         }
     }
-
-    // If the loop finishes and we never changed 'found' to true
-    if (!found) {
         cout << "Error: No doctor found with ID " << ID << "." << endl;
-    }
+        return doctor();
 }
-void hospital::Show_Assigned_Doctor(long int PatientID){}
-void hospital::Show_Assigned_Patients(long int DoctorID){}
+
+void hospital::Show_Assigned_Doctor(long int PatientID) {
+
+
+}
+void hospital::Show_Assigned_Patients(long int DoctorID) {
+
+}
 
 hospital::hospital() {
     ifstream patientsFile("patients.txt");
-    string patientInfoLine;
+
 
     if (patientsFile.is_open()) {
         int numPatients;
+        string patientInfoLine;
+
         patientsFile >> numPatients;
 
         getline(patientsFile, patientInfoLine);
@@ -99,9 +117,10 @@ hospital::hospital() {
     }
 
     ifstream doctorsFile("doctors.txt");
-    string doctorInfoLine;
+
 
     if (doctorsFile.is_open()) {
+        string doctorInfoLine;
         int numDocs;
         doctorsFile >> numDocs;
 
@@ -129,12 +148,4 @@ hospital::hospital() {
     } else {
         cout << "Unable to open doctors.txt" << endl;
     }
-
-    for (int i = 0; i < patients.size(); i++) {
-        cout << patients[i].getFirstName()<< endl;
-    }
-    for (int i = 0; i < doctors.size(); i++) {
-        cout << doctors[i].getDocFirstName()<< endl;
-    }
-
 }

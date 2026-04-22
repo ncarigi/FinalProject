@@ -10,9 +10,7 @@ int main() {
         cout << "Please select an option: [1-7]" << endl;
         cout <<"1. Find oldest patient\n2. Count critical patients\n3. Show patient by ID\n4. Show doctor by ID\n5. Show assigned doctor\n6. Show assigned patients\n7. Exit\n";
         int menuSelector;
-        if (1 == 1) {
-            cin >> menuSelector;
-        }
+        cin >> menuSelector;
         switch (menuSelector) {
             case 1: { //Find oldest patient
                 hospital_central.FindOldestPatient();
@@ -20,7 +18,7 @@ int main() {
             }
 
             case 2: { //Count critical patients
-                hospital_central.CountCriticalPatients();
+                cout <<"There are currently " << hospital_central.CountCriticalPatients() << " critical patients\n\n";
                 break;
             }
 
@@ -67,7 +65,10 @@ int main() {
                 return false;
             }
             default: {
-
+                cout<<"Invalid option!"<<endl;
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                break;
             }
 
         }
