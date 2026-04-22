@@ -21,10 +21,10 @@ class hospital {
     void Show_Assigned_Doctor(long int PatientID);
     void Show_Assigned_Patients(long int DoctorID);
 
+    private:
     patient Get_Patient_Object_By_ID(long int ID);
     doctor Get_Doctor_Object_By_ID(long int ID);
 
-    private:
     vector<patient> patients;
     vector<doctor> doctors;
 };

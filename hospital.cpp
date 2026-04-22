@@ -128,7 +128,7 @@ void hospital::Show_Assigned_Patients(long int DoctorID) {
             }
         }
 
-        if (assignedPatients.size()>1||assignedPatients[0].getPatientID()!=0) {
+        if (!assignedPatients.empty()) {
             cout << "The following patients are assigned to doctor " << doctor.getDocFirstName() << " " << doctor.getDocLastName()<<" ID: "<<doctor.getDocID()<<endl;
             for (int i = 0; i < assignedPatients.size(); i++) {
                 cout <<"["<<i+1<<"]\n" ;
