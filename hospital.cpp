@@ -58,7 +58,7 @@ patient hospital::Get_Patient_Object_By_ID(long int ID) {
             return patient; // Return the patient object if a match is found
         }
     }
-    return patient(); // Return an empty patient object if no match is found
+    return {}; // Return an empty patient object if no match is found
 }
 
 //Helper method to get a doctor object by their ID
@@ -68,7 +68,7 @@ doctor hospital::Get_Doctor_Object_By_ID(long int ID) {
             return doctor; // Return the doctor object if a match is found
         }
     }
-    return doctor(); // Return an empty doctor object if no match is found
+    return {}; // Return an empty doctor object if no match is found
 }
 
 //Method to show doctors by specialty

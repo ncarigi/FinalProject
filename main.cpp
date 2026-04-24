@@ -75,7 +75,7 @@ int main() {
                 return 0;
             }
 
-            case 8: { //Show doctors by specialty (wasn't in the sample menu but I added it because it was in the hospital class)
+            case 8: { //Show doctors by specialty (wasn't in the sample menu, but I added it because it was in the hospital class)
                 cout<<"Search by specialty"<<endl;
                 cout<<"Specialty to search: ";
                 string specialty;

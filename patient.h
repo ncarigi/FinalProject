@@ -21,27 +21,27 @@ class patient {
     void Print_Patient_Info();
     double calculateAge();
     
-    //Getters
-    string getFirstName();
-    string getLastName();
-    long int getPatientID() const;
-    long int getAssignedDoctorID() const;
-    string getDOB();
-    string getBloodType();
-    string getDiagnosis();
-    string getAdmitDate();
-    string getDischargeDate();
-    
-    //Setters
-    void setFirstName(string);
-    void setLastName(string);
-    void setPatientID(long int);
-    void setAssignedDoctorID(long int);
-    void setDOB(string);
-    void setBloodType(string);
-    void setDiagnosis(string);
-    void setAdmitDate(string);
-    void setDischargeDate(string);
+    // Getters
+    [[nodiscard]] string getFirstName() const;
+    [[nodiscard]] string getLastName() const;
+    [[nodiscard]] long int getPatientID() const;
+    [[nodiscard]] long int getAssignedDoctorID() const;
+    [[nodiscard]] string getDOB() const;
+    [[nodiscard]] string getBloodType() const;
+    [[nodiscard]] string getDiagnosis() const;
+    [[nodiscard]] string getAdmitDate() const;
+    [[nodiscard]] string getDischargeDate() const;
+
+    // Setters
+    void setFirstName(const string& newFirstName);
+    void setLastName(const string& newLastName);
+    void setPatientID(long int newPatientID);
+    void setAssignedDoctorID(long int newAssignedDoctorID);
+    void setDOB(const string& newDOB);
+    void setBloodType(const string& newBloodType);
+    void setDiagnosis(const string& newDiagnosis);
+    void setAdmitDate(const string& newAdmitDate);
+    void setDischargeDate(const string& newDischargeDate);
 
     
 
@@ -60,4 +60,4 @@ class patient {
 };
 
 
-#endif //FINALPROJECT_patient_H
+#endif //FINALPROJECT_PATIENTS_H

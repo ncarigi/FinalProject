@@ -78,10 +78,10 @@ patient::patient() {
 }
 
 // --- Getters ---
-string patient::getFirstName() {
+string patient::getFirstName() const {
     return firstName;
 }
-string patient::getLastName() {
+string patient::getLastName() const {
     return lastName;
 }
 long int patient::getPatientID() const {
@@ -90,49 +90,47 @@ long int patient::getPatientID() const {
 long int patient::getAssignedDoctorID() const {
     return assignedDoctorID;
 }
-string patient::getDOB() {
+string patient::getDOB() const {
     return DOB;
 }
-string patient::getBloodType() {
+string patient::getBloodType() const {
     return bloodType;
 }
-string patient::getDiagnosis() {
+string patient::getDiagnosis() const {
     return diagnosis;
 }
-string patient::getAdmitDate() {
+string patient::getAdmitDate() const {
     return admitDate;
 }
-string patient::getDischargeDate() {
+string patient::getDischargeDate() const {
     return dischargeDate;
 }
 
 // --- Setters ---
-void patient::setFirstName(string firstName) {
-    this->firstName = std::move(firstName);
+void patient::setFirstName(const string& newFirstName) {
+    firstName = newFirstName;
 }
-void patient::setLastName(string lastName) {
-    this->lastName = std::move(lastName);
+void patient::setLastName(const string& newLastName) {
+    lastName = newLastName;
 }
-void patient::setPatientID(long int patientID) {
-    this->patientID = patientID;
+void patient::setPatientID(long int newPatientID) {
+    patientID = newPatientID;
 }
-void patient::setAssignedDoctorID(long int assignedDoctorID) {
-    this->assignedDoctorID = assignedDoctorID;
+void patient::setAssignedDoctorID(long int newAssignedDoctorID) {
+    assignedDoctorID = newAssignedDoctorID;
 }
-void patient::setDOB(string DOB) {
-    this->DOB = std::move(DOB);
+void patient::setDOB(const string& newDOB) {
+    DOB = newDOB;
 }
-void patient::setBloodType(string bloodType) {
-    this->bloodType = std::move(bloodType);
+void patient::setBloodType(const string& newBloodType) {
+    bloodType = newBloodType;
 }
-void patient::setDiagnosis(string diagnosis) {
-    this->diagnosis = std::move(diagnosis);
+void patient::setDiagnosis(const string& newDiagnosis) {
+    diagnosis = newDiagnosis;
 }
-
-void patient::setAdmitDate(string admitDate) {
-    this->admitDate = std::move(admitDate);
+void patient::setAdmitDate(const string& newAdmitDate) {
+    admitDate = newAdmitDate;
 }
-
-void patient::setDischargeDate(string dischargeDate) {
-    this->dischargeDate = std::move(dischargeDate);
+void patient::setDischargeDate(const string& newDischargeDate) {
+    dischargeDate = newDischargeDate;
 }
