@@ -24,8 +24,8 @@ class patient {
     //Getters
     string getFirstName();
     string getLastName();
-    long int getPatientID();
-    long int getAssignedDoctorID();
+    long int getPatientID() const;
+    long int getAssignedDoctorID() const;
     string getDOB();
     string getBloodType();
     string getDiagnosis();
