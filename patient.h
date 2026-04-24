@@ -21,7 +21,7 @@ class patient {
     void Print_Patient_Info();
     double calculateAge();
     
-    //getters
+    //Getters
     string getFirstName();
     string getLastName();
     long int getPatientID();
@@ -46,6 +46,7 @@ class patient {
     
 
     private:
+    //Attributes
     string firstName;
     string lastName;
     long int patientID;

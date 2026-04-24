@@ -37,17 +37,18 @@ void patient::Print_Patient_Info() {
 }
 
 double patient::calculateAge() {
+    // Get the current date in YYYYMMDD format
     auto now = chrono::system_clock::now();
-
     int currentDateYYYYMMDD=stoi(format("{:%Y%m%d}", now));
 
     // Convert the DOB string to an integer
-    double dobInt = std::stoi(DOB);
+    int dobInt = std::stoi(DOB);
 
     // Calculate and return the age
-    return (currentDateYYYYMMDD - dobInt) / 10000;
+    return ((currentDateYYYYMMDD - dobInt) / 10000);
 }
 
+//Constructor with parameters
 patient::patient(std::string buildFirstName,std::string buildLastName,long int buildPatientID,long int buildAssignedDoctorID,
     std::string buildDOB,std::string buildBloodType,std::string buildDiagnosis,std::string buildAdmitDate,
     std::string buildDischargeDate) {
@@ -62,6 +63,7 @@ patient::patient(std::string buildFirstName,std::string buildLastName,long int b
     dischargeDate = buildDischargeDate;
 }
 
+//Default constructor
 patient::patient() {
     firstName = "";
     lastName = "";
@@ -74,7 +76,7 @@ patient::patient() {
     dischargeDate = "";
 }
 
-
+// --- Getters ---
 string patient::getFirstName() {
     return firstName;
 }
@@ -103,6 +105,7 @@ string patient::getDischargeDate() {
     return dischargeDate;
 }
 
+// --- Setters ---
 void patient::setFirstName(string firstName) {
     this->firstName = firstName;
 }
