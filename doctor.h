@@ -6,6 +6,7 @@ using namespace std;
 
 class doctor {
     public:
+    //Constructors
     doctor();
     doctor(string docFirstName,
     string docLastName,
@@ -15,6 +16,7 @@ class doctor {
     double baseSalary,
     double performanceBonus);
 
+    //Methods
     double Calculate_Salary();
     void Print_Doctor_Info();
 
@@ -37,6 +39,7 @@ class doctor {
     void setPerformanceBonus(double bonus);
 
     private:
+    //Attributes
     string docFirstName;
     string docLastName;
     long int docID;

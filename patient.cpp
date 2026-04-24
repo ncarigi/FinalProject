@@ -1,12 +1,9 @@
-//
-// Created by Nicolas Carigi on 2026-04-17.
-//
-
-#include "patient.h"
 #include <fstream>
 #include <iostream>
 #include <ostream>
-#include "doctor.h"
+#include <format>
+#include <chrono>
+#include "patient.h"
 
 
 using namespace std;
@@ -40,7 +37,9 @@ void patient::Print_Patient_Info() {
 }
 
 double patient::calculateAge() {
-    int currentDateYYYYMMDD=20260418;
+    auto now = chrono::system_clock::now();
+
+    int currentDateYYYYMMDD=stoi(format("{:%Y%m%d}", now));
 
     // Convert the DOB string to an integer
     double dobInt = std::stoi(DOB);

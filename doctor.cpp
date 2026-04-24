@@ -1,15 +1,12 @@
-//
-// Created by Nicolas Carigi on 2026-04-18.
-//
-
 #include "doctor.h"
-
 #include <iostream>
 
+//Method to calculate the total salary
 double doctor::Calculate_Salary() {
     return baseSalary+baseSalary*performanceBonus;
 }
 
+//Method to print the doctor's information
 void doctor::Print_Doctor_Info() {
     cout<<"Doctor Name: "<<docFirstName <<" "<< docLastName << endl;
     cout<<"ID: "<<docID<< endl;
@@ -19,6 +16,7 @@ void doctor::Print_Doctor_Info() {
     cout<<"Performance bonus: "<<performanceBonus <<"% ["<<Calculate_Salary()<<"$]"<<endl;
 }
 
+//Constructor with parameters and default constructor
 doctor::doctor(string buildDocFirstName, string buildDocLastName, long int buildDocID, string buildSpecialty, int buildYearsExp, double buildBaseSalary, double buildPerformanceBonus) {
     docFirstName=buildDocFirstName;
     docLastName=buildDocLastName;
@@ -29,6 +27,7 @@ doctor::doctor(string buildDocFirstName, string buildDocLastName, long int build
     performanceBonus=buildPerformanceBonus;
 }
 
+//Default constructor
 doctor::doctor(){
     docFirstName="";
     docLastName="";
