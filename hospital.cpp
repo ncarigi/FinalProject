@@ -10,14 +10,14 @@
 using namespace std;
 
 void hospital::FindOldestPatient() {
-    if (!patients.empty()) {
+    if (!patients -> empty()) {
         long int oldestPatientID=0;
         double oldestPatientAge=0;
 
-        for (int i = 0; i < patients.size(); i++) {
-            if (patients[i].calculateAge()>oldestPatientAge) {
-                oldestPatientID=patients[i].getPatientID();
-                oldestPatientAge=patients[i].calculateAge();
+        for (auto & patient : *patients) {
+            if (patient.calculateAge()>oldestPatientAge) {
+                oldestPatientID=patient.getPatientID();
+                oldestPatientAge=patient.calculateAge();
             }
 
         }
@@ -31,9 +31,9 @@ void hospital::FindOldestPatient() {
 
 int hospital::CountCriticalPatients() {
     int NumCriticalPatients=0;
-    if (!patients.empty()) {
-        for (int i = 0; i < patients.size(); i++) {
-            if (patients[i].Patient_Status()=="Critical") {
+    if (!patients -> empty()) {
+        for (auto & patient : *patients) {
+            if (patient.Patient_Status()=="Critical") {
                 NumCriticalPatients++;
             }
         }
@@ -42,30 +42,30 @@ int hospital::CountCriticalPatients() {
 }
 
 patient hospital::Get_Patient_Object_By_ID(long int ID) {
-    for (int i = 0; i < patients.size(); i++) {
-        if (patients[i].getPatientID() == ID) {
-            return patients[i];
+    for (auto & patient : *patients) {
+        if (patient.getPatientID() == ID) {
+            return patient;
         }
     }
     return patient();
 }
 
 doctor hospital::Get_Doctor_Object_By_ID(long int ID) {
-    for (int i = 0; i < doctors.size(); i++) {
-        if (doctors[i].getDocID() == ID) {
-            return doctors[i];
+    for (auto & doctor : *doctors) {
+        if (doctor.getDocID() == ID) {
+            return doctor;
         }
     }
     return doctor();
 }
 
 
-void hospital::DoctorsBySpecialty(string specialty) {
+void hospital::DoctorsBySpecialty(const string& specialty) {
 
     cout << "Here are the doctors specializing in "<<specialty<<":"<< endl;
-    for (int i = 0; i < doctors.size(); i++) {
-        if (doctors[i].getSpecialty()==specialty) {
-            cout <<"["<<i+1<<"] " << doctors[i].getDocFirstName()<<" "<<doctors[i].getDocLastName()<<" ID: "<<doctors[i].getDocID()<<"\n\n";
+    for (int i = 0; i < doctors->size(); i++) {
+        if (doctors->at(i).getSpecialty()==specialty) {
+            cout <<"["<<i+1<<"] " << doctors->at(i).getDocFirstName()<<" "<<doctors->at(i).getDocLastName()<<" ID: "<<doctors->at(i).getDocID()<<"\n\n";
 
         }
     }
@@ -122,9 +122,9 @@ void hospital::Show_Assigned_Patients(long int DoctorID) {
         doctor doctor = Get_Doctor_Object_By_ID(DoctorID);
         vector<patient> assignedPatients;
 
-        for (int i = 0; i < patients.size(); i++) {
-            if (patients[i].getAssignedDoctorID()==DoctorID) {
-                assignedPatients.push_back(patients[i]);
+        for (auto & patient : *patients) {
+            if (patient.getAssignedDoctorID()==DoctorID) {
+                assignedPatients.push_back(patient);
             }
         }
 
@@ -172,10 +172,10 @@ hospital::hospital() {
 
             patient newPatient(fName, lName, pID, docID, dob, bloodType, diag, admit, discharge);
 
-            patients.push_back(newPatient);
+            patients -> push_back(newPatient);
         }
         patientsFile.close();
-        cout << "Successfully loaded " << patients.size() << " patients." << endl;
+        cout << "Successfully loaded " << patients -> size() << " patients." << endl;
     } else {
         cout << "Unable to open patients.txt" << endl;
     }
@@ -205,10 +205,10 @@ hospital::hospital() {
 
             doctor newDoctor(fName, lName, dID, specialty, yearExp , baseSalary, performanceBonus);
 
-            doctors.push_back(newDoctor);
+            doctors -> push_back(newDoctor);
         }
         doctorsFile.close();
-        cout << "Successfully loaded " << doctors.size() << " doctors." << endl;
+        cout << "Successfully loaded " << doctors -> size() << " doctors." << endl;
     } else {
         cout << "Unable to open doctors.txt" << endl;
     }

@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-double doctor::CalcSalary() {
+double doctor::Calculate_Salary() {
     return baseSalary+baseSalary*performanceBonus;
 }
 
@@ -16,7 +16,7 @@ void doctor::Print_Doctor_Info() {
     cout<<"Specialty: "<<specialty<< endl;
     cout<<"Years of experience: "<<yearsExp<< endl;
     cout<<"Base Salary:  "<<baseSalary<< endl;
-    cout<<"Performance bonus: "<<performanceBonus <<"% ["<<CalcSalary()<<"$]"<<endl;
+    cout<<"Performance bonus: "<<performanceBonus <<"% ["<<Calculate_Salary()<<"$]"<<endl;
 }
 
 doctor::doctor(string buildDocFirstName, string buildDocLastName, long int buildDocID, string buildSpecialty, int buildYearsExp, double buildBaseSalary, double buildPerformanceBonus) {

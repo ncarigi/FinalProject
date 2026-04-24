@@ -15,7 +15,7 @@ class doctor {
     double baseSalary,
     double performanceBonus);
 
-    double CalcSalary();
+    double Calculate_Salary();
     void Print_Doctor_Info();
 
     // Getters
