@@ -8,7 +8,7 @@ int main() {
 
     while (true) {
         cout << "\nPlease select an option: [1-7]" << endl;
-        cout <<"1. Find oldest patient\n2. Count critical patients\n3. Show patient by ID\n4. Show doctor by ID\n5. Show assigned doctor\n6. Show assigned patients\n7. Doctors by speciality\n8. Exit\n";
+        cout <<"1. Find oldest patient\n2. Count critical patients\n3. Show patient by ID\n4. Show doctor by ID\n5. Show assigned doctor\n6. Show assigned patients\n7. Exit\n8. Doctors by specialty (missing sample menu)\n";
         int menuSelector;
         cin >> menuSelector;
         switch (menuSelector) {
@@ -59,16 +59,21 @@ int main() {
                 break;
             }
 
-            case 7: { //Count critical patients
-                hospital_central.DoctorsBySpecialty("Diagnostics");
-                break;
-            }
-
-            case 8: { //Exit
+            case 7: { //Exit
                 cout<<"Goodbye"<<endl;
                 cout<<"Shutting down"<<endl;
                 return 0;
             }
+
+            case 8: {
+                cout<<"Search by specialty"<<endl;
+                cout<<"Specialty to search: ";
+                string specialty;
+                cin >> specialty;
+                hospital_central.DoctorsBySpecialty(specialty);
+                break;
+            }
+
 
             default: {
                 cout<<"Invalid option!"<<endl;
