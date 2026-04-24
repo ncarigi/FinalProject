@@ -148,6 +148,9 @@ void hospital::Show_Assigned_Patients(long int DoctorID) {
 
 
 hospital::hospital() {
+    patients = new vector<patient>();
+    doctors = new vector<doctor>();
+
     ifstream patientsFile("patients.txt");
 
 

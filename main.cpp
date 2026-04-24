@@ -9,8 +9,16 @@ int main() {
     while (true) {
         cout << "\nPlease select an option: [1-7]" << endl;
         cout <<"1. Find oldest patient\n2. Count critical patients\n3. Show patient by ID\n4. Show doctor by ID\n5. Show assigned doctor\n6. Show assigned patients\n7. Exit\n8. Doctors by specialty (missing sample menu)\n";
-        int menuSelector;
-        cin >> menuSelector;
+
+        int menuSelector=0;
+
+        if (!(cin >> menuSelector)) {
+            cout << "Invalid input! Please enter a number" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+
         switch (menuSelector) {
             case 1: { //Find the oldest patient
                 hospital_central.FindOldestPatient();
