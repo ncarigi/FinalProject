@@ -1,11 +1,15 @@
+/*
+Name: Nicolas Carigi
+Student ID: 40303463
+Course: COEN 243
+Assignment: Final Project
+ */
 
 #include "hospital.h"
 #include "patient.h"
-
 #include <fstream>
 #include <iostream>
 #include <sstream>
-
 
 using namespace std;
 

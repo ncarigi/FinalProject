@@ -1,6 +1,9 @@
-//
-// Created by Nicolas Carigi on 2026-04-18.
-//
+/*
+Name: Nicolas Carigi
+Student ID: 40303463
+Course: COEN 243
+Assignment: Final Project
+ */
 
 #ifndef FINALPROJECT_HOSPITAL_H
 #define FINALPROJECT_HOSPITAL_H

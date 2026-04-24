@@ -1,3 +1,9 @@
+/*
+Name: Nicolas Carigi
+Student ID: 40303463
+Course: COEN 243
+Assignment: Final Project
+ */
 
 #ifndef FINALPROJECT_DOCTOR_H
 #define FINALPROJECT_DOCTOR_H

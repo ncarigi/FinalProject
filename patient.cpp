@@ -1,3 +1,10 @@
+/*
+Name: Nicolas Carigi
+Student ID: 40303463
+Course: COEN 243
+Assignment: Final Project
+ */
+
 #include <fstream>
 #include <iostream>
 #include <ostream>
@@ -5,7 +12,6 @@
 #include <chrono>
 #include <utility>
 #include "patient.h"
-
 
 using namespace std;
 

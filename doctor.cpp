@@ -1,3 +1,10 @@
+/*
+Name: Nicolas Carigi
+Student ID: 40303463
+Course: COEN 243
+Assignment: Final Project
+ */
+
 #include "doctor.h"
 #include <iostream>
 
