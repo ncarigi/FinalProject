@@ -21,12 +21,12 @@ int main() {
 
         switch (menuSelector) {
             case 1: { //Find the oldest patient
-                hospital_central.FindOldestPatient();
+                hospital_central.Find_Oldest_Patient();
                 break;
             }
 
             case 2: { //Count critical patients
-                cout <<"There are currently " << hospital_central.CountCriticalPatients() << " critical patients\n";
+                cout <<"There are currently " << hospital_central.Count_Critical_Patients() << " critical patients\n";
                 break;
             }
 
@@ -69,7 +69,6 @@ int main() {
 
             case 7: { //Exit
                 cout<<"Goodbye"<<endl;
-                cout<<"Shutting down"<<endl;
                 return 0;
             }
 

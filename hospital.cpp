@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void hospital::FindOldestPatient() {
+void hospital::Find_Oldest_Patient() {
     if (!patients -> empty()) {
         long int oldestPatientID=0;
         double oldestPatientAge=0;
@@ -29,7 +29,7 @@ void hospital::FindOldestPatient() {
     }
 }
 
-int hospital::CountCriticalPatients() {
+int hospital::Count_Critical_Patients() {
     int NumCriticalPatients=0;
     if (!patients -> empty()) {
         for (auto & patient : *patients) {
@@ -215,4 +215,10 @@ hospital::hospital() {
     } else {
         cout << "Unable to open doctors.txt" << endl;
     }
+}
+
+hospital::~hospital() {
+    delete patients;
+    delete doctors;
+    cout<<"[Shutting down] Hospital memory successfully cleaned up!"<<endl;
 }

@@ -12,14 +12,16 @@ class hospital {
 
     public:
     hospital();
+    ~hospital();
 
-    void FindOldestPatient();
-    int CountCriticalPatients();
+    void Find_Oldest_Patient();
+    int Count_Critical_Patients();
     void DoctorsBySpecialty(const string& specialty);
     void Show_Patient_by_ID(long int ID);
     void Show_Doctor_by_ID(long int ID);
     void Show_Assigned_Doctor(long int PatientID);
     void Show_Assigned_Patients(long int DoctorID);
+
 
     private:
     patient Get_Patient_Object_By_ID(long int ID);
